@@ -1,7 +1,7 @@
 import originJsonp from 'jsonp'
 
 export default function jsonp (url, data, option) { // url带有参数，把data拼接到url上
-  url += (url.indexof('?') < 0 ? '?' : '&') + param(data)
+  url += (url.indexOf('?') < 0 ? '?' : '&') + param(data)
   return new Promise((resolve, reject) => {
     originJsonp(url, option, (err, data) => {
       if (!err) { // 表示非空的时候就是成功
