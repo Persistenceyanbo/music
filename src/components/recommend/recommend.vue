@@ -1,7 +1,7 @@
 <template>
   <div class="recommend">
     <div class="recommend-content">
-      <div class="slider-wrapper">
+      <div v-if="recommends.length" class="slider-wrapper">
         <Slider>
           <div v-for="(item, index) in recommends" :key="index">
             <a :href="item.linkUrl">
@@ -33,7 +33,7 @@ export default {
       recommends: []
     }
   },
-  mounted () {
+  created () {
     this._getRecommend()
   },
   methods: {
